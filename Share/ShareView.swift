@@ -31,7 +31,13 @@ struct ShareView: View {
                 ProgressView()
                     .controlSize(.extraLarge)
             } else if result == "error" {
-                
+                ContentUnavailableView(
+                    "Upload Failed", systemImage: "wifi.slash",
+                    description: Text(
+                        "Make sure you are connected to the internet."
+                    )
+                )
+                .foregroundStyle(Color.black, Color.main)
             } else {
                 ResultView()
             }
@@ -40,7 +46,7 @@ struct ShareView: View {
             
             Button(action: dismiss) {
                 Text("Done")
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(.white)
                     .font(.headline)
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
@@ -54,6 +60,32 @@ struct ShareView: View {
             try? await Task.sleep(nanoseconds: 1_000_000_000)
             share()
         }
+        .background {
+            HStack {
+                Spacer()
+                Line()
+                Spacer()
+                Spacer()
+                Line()
+                Spacer()
+                Spacer()
+                Line()
+                Spacer()
+                Spacer()
+                Line()
+                Spacer()
+            }
+            .rotationEffect(Angle(degrees: 45))
+        }
+    }
+    
+    @ViewBuilder func Line() -> some View {
+        Rectangle()
+            .frame(width: 50, height: 2000)
+            .foregroundStyle(Color.green)
+            .opacity(0.5)
+            .blur(radius: 50)
+            .frame(width: 200)
     }
     
     @ViewBuilder func ResultView() -> some View {
@@ -70,6 +102,12 @@ struct ShareView: View {
                 .interpolation(.none)
                 .scaledToFit()
                 .frame(width: 190)
+                .padding()
+                .background {
+                    Rectangle()
+                        .foregroundStyle(.ultraThickMaterial)
+                        .clipShape(.rect(cornerRadius: 20))
+                }
         }
     }
     
@@ -130,6 +168,7 @@ struct ShareView: View {
             
             print(url)
             try data.write(to: url, options: [.atomic])
+            
             upload(to: url)
         } catch {
             

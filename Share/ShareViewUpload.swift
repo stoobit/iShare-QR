@@ -40,6 +40,10 @@ extension ShareView {
             } catch {
                 result = "error"
             }
+            
+            try? FileManager.default.removeItem(
+                atPath: fileurl.path
+            )
         }
         
         task.resume()
