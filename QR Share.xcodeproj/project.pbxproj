@@ -6,9 +6,59 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BB57847A2C91E722007EADDA /* Share.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BB5784702C91E722007EADDA /* Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB5784782C91E722007EADDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB5784532C91E5A5007EADDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB57846F2C91E722007EADDA;
+			remoteInfo = Share;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BB5784802C91E722007EADDA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BB57847A2C91E722007EADDA /* Share.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BB57845B2C91E5A5007EADDA /* QR Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB5784702C91E722007EADDA /* Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BB57847B2C91E722007EADDA /* Exceptions for "Share" folder in "Share" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"/Localized: MainInterface.storyboard",
+				Info.plist,
+			);
+			target = BB57846F2C91E722007EADDA /* Share */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		BB57847F2C91E722007EADDA /* Exceptions for "Share" folder in "Copy Bundle Resources" phase from "Share" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = BB57846E2C91E722007EADDA /* Resources */;
+			membershipExceptions = (
+				Base.lproj/MainInterface.storyboard,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BB57845D2C91E5A5007EADDA /* QR Share */ = {
@@ -16,10 +66,26 @@
 			path = "QR Share";
 			sourceTree = "<group>";
 		};
+		BB5784712C91E722007EADDA /* Share */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BB57847B2C91E722007EADDA /* Exceptions for "Share" folder in "Share" target */,
+				BB57847F2C91E722007EADDA /* Exceptions for "Share" folder in "Copy Bundle Resources" phase from "Share" target */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BB5784582C91E5A5007EADDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB57846D2C91E722007EADDA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				BB57845D2C91E5A5007EADDA /* QR Share */,
+				BB5784712C91E722007EADDA /* Share */,
 				BB57845C2C91E5A5007EADDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				BB57845B2C91E5A5007EADDA /* QR Share.app */,
+				BB5784702C91E722007EADDA /* Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +123,12 @@
 				BB5784572C91E5A5007EADDA /* Sources */,
 				BB5784582C91E5A5007EADDA /* Frameworks */,
 				BB5784592C91E5A5007EADDA /* Resources */,
+				BB5784802C91E722007EADDA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BB5784792C91E722007EADDA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				BB57845D2C91E5A5007EADDA /* QR Share */,
@@ -69,6 +139,28 @@
 			productName = "QR Share";
 			productReference = BB57845B2C91E5A5007EADDA /* QR Share.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BB57846F2C91E722007EADDA /* Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB57847C2C91E722007EADDA /* Build configuration list for PBXNativeTarget "Share" */;
+			buildPhases = (
+				BB57846C2C91E722007EADDA /* Sources */,
+				BB57846D2C91E722007EADDA /* Frameworks */,
+				BB57846E2C91E722007EADDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BB5784712C91E722007EADDA /* Share */,
+			);
+			name = Share;
+			packageProductDependencies = (
+			);
+			productName = Share;
+			productReference = BB5784702C91E722007EADDA /* Share.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +173,9 @@
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					BB57845A2C91E5A5007EADDA = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					BB57846F2C91E722007EADDA = {
 						CreatedOnToolsVersion = 16.1;
 					};
 				};
@@ -100,12 +195,20 @@
 			projectRoot = "";
 			targets = (
 				BB57845A2C91E5A5007EADDA /* QR Share */,
+				BB57846F2C91E722007EADDA /* Share */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BB5784592C91E5A5007EADDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB57846E2C91E722007EADDA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +225,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB57846C2C91E722007EADDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB5784792C91E722007EADDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB57846F2C91E722007EADDA /* Share */;
+			targetProxy = BB5784782C91E722007EADDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BB5784672C91E5A7007EADDA /* Debug */ = {
@@ -302,6 +420,58 @@
 			};
 			name = Release;
 		};
+		BB57847D2C91E722007EADDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8ZDMM9V4U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Share/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Share;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stoobit.QR-Share.Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB57847E2C91E722007EADDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8ZDMM9V4U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Share/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Share;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stoobit.QR-Share.Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +489,15 @@
 			buildConfigurations = (
 				BB57846A2C91E5A7007EADDA /* Debug */,
 				BB57846B2C91E5A7007EADDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB57847C2C91E722007EADDA /* Build configuration list for PBXNativeTarget "Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB57847D2C91E722007EADDA /* Debug */,
+				BB57847E2C91E722007EADDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
