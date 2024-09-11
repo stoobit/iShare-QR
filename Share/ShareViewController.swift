@@ -24,6 +24,7 @@ class ShareViewController: UIViewController {
             ))
             
             hostingView.view.frame = view.frame
+            view.backgroundColor = UIColor.systemGroupedBackground
             view.addSubview(hostingView.view)
         }
     }
