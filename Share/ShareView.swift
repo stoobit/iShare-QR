@@ -55,6 +55,9 @@ struct ShareView: View {
             }
         }
         .padding([.top, .horizontal], 30)
+        .padding(
+            .bottom, UIDevice.current.userInterfaceIdiom == .pad ? 30 : 0
+        )
         .task {
             try? await Task.sleep(nanoseconds: 1_000_000_000)
             share()
