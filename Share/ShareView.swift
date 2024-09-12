@@ -37,7 +37,7 @@ struct ShareView: View {
                         "Make sure you are connected to the internet."
                     )
                 )
-                .foregroundStyle(Color.black, Color.main)
+                .foregroundStyle(Color.black, Color.green)
             } else {
                 ResultView()
             }
@@ -50,12 +50,11 @@ struct ShareView: View {
                     .font(.headline)
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
-                    .background(Color.main)
+                    .background(Color.green)
                     .clipShape(.capsule)
             }
-            .padding(.vertical)
         }
-        .padding(30)
+        .padding([.top, .horizontal], 30)
         .task {
             try? await Task.sleep(nanoseconds: 1_000_000_000)
             share()
@@ -121,7 +120,7 @@ struct ShareView: View {
             
             let maskFilter = CIFilter.blendWithMask()
             maskFilter.maskImage = outputImage.applyingFilter("CIColorInvert")
-            maskFilter.inputImage = CIImage(color: CIColor(color: .main))
+            maskFilter.inputImage = CIImage(color: CIColor(color: .systemGreen))
             let coloredImage = maskFilter.outputImage!
             
             if let cgimg = context.createCGImage(coloredImage, from: coloredImage.extent) {
