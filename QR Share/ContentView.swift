@@ -33,7 +33,7 @@ struct ContentView: View {
                     .padding()
 
             }
-            .foregroundStyle(Color.primary, Color.green)
+            .foregroundStyle(Color.primary, Color.blue)
             .navigationTitle("iShare QR")
         }
     }

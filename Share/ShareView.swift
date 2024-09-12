@@ -37,7 +37,7 @@ struct ShareView: View {
                         "Make sure you are connected to the internet."
                     )
                 )
-                .foregroundStyle(Color.primary, Color.green)
+                .foregroundStyle(Color.primary, Color.blue)
             } else {
                 ResultView()
             }
@@ -46,11 +46,10 @@ struct ShareView: View {
             
             Button(action: dismiss) {
                 Text("Done")
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.primary)
                     .font(.headline)
-                    .frame(height: 50)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.green)
+                    .frame(width: 100, height: 50)
+                    .background(Color.gray.opacity(0.2))
                     .clipShape(.capsule)
             }
         }
@@ -62,32 +61,6 @@ struct ShareView: View {
             try? await Task.sleep(nanoseconds: 1_000_000_000)
             share()
         }
-        .background {
-            HStack {
-                Spacer()
-                Line()
-                Spacer()
-                Spacer()
-                Line()
-                Spacer()
-                Spacer()
-                Line()
-                Spacer()
-                Spacer()
-                Line()
-                Spacer()
-            }
-            .rotationEffect(Angle(degrees: 45))
-        }
-    }
-    
-    @ViewBuilder func Line() -> some View {
-        Rectangle()
-            .frame(width: 50, height: 2000)
-            .foregroundStyle(Color.green)
-            .opacity(0.5)
-            .blur(radius: 50)
-            .frame(width: 200)
     }
     
     @ViewBuilder func ResultView() -> some View {
@@ -107,7 +80,7 @@ struct ShareView: View {
                 .padding()
                 .background {
                     Rectangle()
-                        .foregroundStyle(.ultraThickMaterial)
+                        .foregroundStyle(.blue)
                         .clipShape(.rect(cornerRadius: 20))
                 }
         }
@@ -123,7 +96,7 @@ struct ShareView: View {
             
             let maskFilter = CIFilter.blendWithMask()
             maskFilter.maskImage = outputImage.applyingFilter("CIColorInvert")
-            maskFilter.inputImage = CIImage(color: CIColor(color: .systemGreen))
+            maskFilter.inputImage = CIImage(color: CIColor(color: .white))
             let coloredImage = maskFilter.outputImage!
             
             if let cgimg = context.createCGImage(coloredImage, from: coloredImage.extent) {
