@@ -9,13 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                ContentUnavailableView(
+                    "Step 1", systemImage: "square.and.arrow.up",
+                    description: Text("Share a file on this device.")
+                )
+
+                ContentUnavailableView(
+                    "Step 2", systemImage: "qrcode",
+                    description: Text("Create a QR-Code with iQR Share.")
+                )
+
+                ContentUnavailableView(
+                    "Step 3", systemImage: "iphone.gen3",
+                    description: Text("Scan the code with another device to receive the file.")
+                )
+
+                Text("Your files are uploaded to tmpfiles.org and temporarily stored for 60 minutes.")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding()
+
+            }
+            .foregroundStyle(Color.primary, Color.green)
+            .navigationTitle("iShare QR")
         }
-        .padding()
     }
 }
 

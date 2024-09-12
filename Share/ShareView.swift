@@ -37,7 +37,7 @@ struct ShareView: View {
                         "Make sure you are connected to the internet."
                     )
                 )
-                .foregroundStyle(Color.black, Color.green)
+                .foregroundStyle(Color.primary, Color.green)
             } else {
                 ResultView()
             }
