@@ -18,7 +18,7 @@ struct ContentView: View {
 
                 ContentUnavailableView(
                     "Step 2", systemImage: "qrcode",
-                    description: Text("Create a QR-Code with iQR Share.")
+                    description: Text("Create a QR-Code with iShare QR.")
                 )
 
                 ContentUnavailableView(
