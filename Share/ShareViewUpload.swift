@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import Mixpanel
 
 extension ShareView {
     func upload(to fileurl: URL) {
@@ -16,6 +17,14 @@ extension ShareView {
             request = try createRequest(fileurl: fileurl)
         } catch {
             print(error)
+            Mixpanel.mainInstance().track(
+                event: "upload",
+                properties: [
+                    "state": "failure",
+                    "link": "-",
+                ]
+            )
+            
             return
         }
         
@@ -33,12 +42,29 @@ extension ShareView {
                 )
                 
                 var temporary = model.data.url
-                temporary.replace("https://tmpfiles.org/", with: "https://tmpfiles.org/dl/")
+                temporary.replace(
+                    "https://tmpfiles.org/", with: "https://tmpfiles.org/dl/"
+                )
+                
+                Mixpanel.mainInstance().track(
+                    event: "upload",
+                    properties: [
+                        "state": "success",
+                        "link": "\(temporary)",
+                    ]
+                )
                 
                 print(temporary)
                 result = temporary
             } catch {
                 result = "error"
+                Mixpanel.mainInstance().track(
+                    event: "upload",
+                    properties: [
+                        "state": "failure",
+                        "link": "-",
+                    ]
+                )
             }
             
             try? FileManager.default.removeItem(

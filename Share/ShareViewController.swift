@@ -8,9 +8,15 @@
 import UIKit
 import Social
 import SwiftUI
+import Mixpanel
 
 class ShareViewController: UIViewController {
     override func viewDidLoad() {
+        Mixpanel.initialize(
+            token: "7eebdaf9f924e0da223ba879958257b6",
+            trackAutomaticEvents: false
+        )
+        
         super.viewDidLoad()
         self.isModalInPresentation = true
         

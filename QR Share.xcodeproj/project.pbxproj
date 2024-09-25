@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB3D03EF2CA43489004E1D5C /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = BB3D03EE2CA43489004E1D5C /* Mixpanel */; };
 		BB57847A2C91E722007EADDA /* Share.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BB5784702C91E722007EADDA /* Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3D03EF2CA43489004E1D5C /* Mixpanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +159,7 @@
 			);
 			name = Share;
 			packageProductDependencies = (
+				BB3D03EE2CA43489004E1D5C /* Mixpanel */,
 			);
 			productName = Share;
 			productReference = BB5784702C91E722007EADDA /* Share.appex */;
@@ -189,6 +192,9 @@
 			);
 			mainGroup = BB5784522C91E5A5007EADDA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BB3D03ED2CA43489004E1D5C /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BB57845C2C91E5A5007EADDA /* Products */;
 			projectDirPath = "";
@@ -380,6 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +418,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -435,6 +443,7 @@
 				INFOPLIST_FILE = Share/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iShare QR";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +470,7 @@
 				INFOPLIST_FILE = Share/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iShare QR";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +517,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB3D03ED2CA43489004E1D5C /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB3D03EE2CA43489004E1D5C /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB3D03ED2CA43489004E1D5C /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB5784532C91E5A5007EADDA /* Project object */;
 }
