@@ -50,7 +50,6 @@ extension ShareView {
                     event: "upload",
                     properties: [
                         "state": "success",
-                        "link": "\(temporary)",
                     ]
                 )
                 
