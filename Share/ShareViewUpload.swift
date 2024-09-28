@@ -21,7 +21,6 @@ extension ShareView {
                 event: "upload",
                 properties: [
                     "state": "failure",
-                    "link": "-",
                 ]
             )
             
