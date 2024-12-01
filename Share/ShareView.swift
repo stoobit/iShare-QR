@@ -64,25 +64,23 @@ struct ShareView: View {
     }
     
     @ViewBuilder func ResultView() -> some View {
-        if result == "error" {
-            ContentUnavailableView(
-                "Ein Fehler ist aufgetreten.",
-                systemImage: "exclamationmark.triangle.fill"
-            )
-        } else if result == "" {
-            ProgressView()
-        } else {
-            Image(uiImage: generateQRCode(from: result))
-                .resizable()
-                .interpolation(.none)
-                .scaledToFit()
-                .frame(width: 190)
-                .padding()
-                .background {
-                    Rectangle()
-                        .foregroundStyle(.blue)
-                        .clipShape(.rect(cornerRadius: 20))
-                }
+        VStack {
+            if result == "" {
+                ProgressView()
+                    .transition(.blurReplace)
+            } else {
+                Image(uiImage: generateQRCode(from: result))
+                    .resizable()
+                    .interpolation(.none)
+                    .scaledToFit()
+                    .frame(width: 190)
+                    .padding()
+                    .background {
+                        Rectangle()
+                            .foregroundStyle(.blue)
+                            .clipShape(.rect(cornerRadius: 20))
+                    }
+            }
         }
     }
     
