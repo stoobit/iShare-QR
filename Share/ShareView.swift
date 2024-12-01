@@ -121,6 +121,13 @@ struct ShareView: View {
                 return
             }
             
+            if type == .url {
+                item.loadItem(forTypeIdentifier: type.identifier) { url, _ in
+                    result = (url as! URL).absoluteString
+                }
+                return
+            }
+            
             let _ = item.loadDataRepresentation(for: type) { data, _ in
                 if let data = data {
                     Task {
