@@ -1,5 +1,5 @@
 # iShare QR
-Dowload on the [App Store](https://apps.apple.com/us/app/ishare-qr/id6673915598).<br/>
+Download iShareQR on the [App Store](https://apps.apple.com/us/app/ishare-qr/id6673915598).<br/>
 
 <div align="center">
 
