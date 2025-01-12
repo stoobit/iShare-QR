@@ -1,3 +1,5 @@
+# iShare QR
+
 <div align="center">
 
 <a href="https://apps.apple.com/us/app/ishare-qr/id6673915598">
@@ -11,3 +13,6 @@
 </a>
 
 </div>
+<br/>iShare QR lets you share links, files and photos quickly using a simple QR code. No need for cables or complex setups — just scan and transfer everything instantly.
+
+With iShare QR, you can share any file type — whether it's documents, images, videos, audio or links — directly from any app you’re using. There’s no need to worry about file compatibility or complex steps. Simply generate a QR code for the file and share it instantly. Our mission is to make file sharing across different devices, operating systems, and ecosystems as easy as possible. Whether you’re using iOS, or any other platform, iShare QR ensures a fast, seamless, and secure transfer experience without the need for cables or other third-party services.
