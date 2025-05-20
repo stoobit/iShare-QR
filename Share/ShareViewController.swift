@@ -8,13 +8,13 @@
 import UIKit
 import Social
 import SwiftUI
-import Mixpanel
+import Analytics
 
 class ShareViewController: UIViewController {
     override func viewDidLoad() {
-        Mixpanel.initialize(
-            token: "7eebdaf9f924e0da223ba879958257b6",
-            trackAutomaticEvents: false
+        Analytics.initialize(
+            with: "1fafa0f31d10d9725fac48d5f1dbae2e",
+            interval: 60*10
         )
         
         super.viewDidLoad()
@@ -51,5 +51,12 @@ class ShareViewController: UIViewController {
                 )
             ])
         }
+        
+        Analytics.track("Session Start")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Analytics.track("Session End")
+        Analytics.flush()
     }
 }

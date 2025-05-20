@@ -1,13 +1,13 @@
 {
-  "originHash" : "652a3e5623b2e6c8c6e0e0b946c185247190377f8f46737da6c1d9062f42423e",
+  "originHash" : "02f7d1d584cb877d32c6aaa6f8800a8cb2b438d0eb9a0bb59103a23e8809ec72",
   "pins" : [
     {
-      "identity" : "mixpanel-swift",
+      "identity" : "stoobit-analytics-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mixpanel/mixpanel-swift",
+      "location" : "https://github.com/stoobit-analytics/stoobit-analytics-swift",
       "state" : {
-        "branch" : "master",
-        "revision" : "61ce9b40817466fb1334db1d7a582fbaf616ab4c"
+        "revision" : "63a52d2813ab50afbd6822d4a0189a70a347610d",
+        "version" : "1.0.1"
       }
     }
   ],

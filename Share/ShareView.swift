@@ -9,6 +9,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 import CoreImage.CIFilterBuiltins
 import Social
+import Analytics
 
 struct ShareView: View {
     @State var result: String = ""
@@ -120,6 +121,17 @@ struct ShareView: View {
             }
             
             if type == .url {
+                Task { @MainActor in
+                    Analytics
+                        .track("API Connection", properties: ["state": "none"])
+                    
+                    Analytics
+                        .track("File Upload", properties: [
+                            "state": "success",
+                            "filetype": "url"
+                        ])
+                }
+                
                 item.loadItem(forTypeIdentifier: type.identifier) { url, _ in
                     result = (url as! URL).absoluteString
                 }

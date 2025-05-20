@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
+import Analytics
 import UniformTypeIdentifiers
-import Mixpanel
 
 extension ShareView {
     func upload(to fileurl: URL) {
@@ -15,15 +15,9 @@ extension ShareView {
         
         do {
             request = try createRequest(fileurl: fileurl)
+            Analytics.track("API Connection", properties: ["state": "success"])
         } catch {
-            print(error)
-            Mixpanel.mainInstance().track(
-                event: "upload",
-                properties: [
-                    "state": "failure",
-                ]
-            )
-            
+            Analytics.track("API Connection", properties: ["state": "failure"])
             return
         }
         
@@ -45,24 +39,27 @@ extension ShareView {
                     "https://tmpfiles.org/", with: "https://tmpfiles.org/dl/"
                 )
                 
-                Mixpanel.mainInstance().track(
-                    event: "upload",
-                    properties: [
-                        "state": "success",
-                    ]
-                )
+                Task { @MainActor in
+                    Analytics.track(
+                        "File Upload",
+                        properties: [
+                            "state": "success",
+                            "filetype": fileurl.pathExtension.lowercased()
+                        ]
+                    )
+                }
                 
-                print(temporary)
                 result = temporary
             } catch {
                 result = "error"
-                Mixpanel.mainInstance().track(
-                    event: "upload",
-                    properties: [
-                        "state": "failure",
-                        "link": "-",
-                    ]
-                )
+                Task { @MainActor in
+                    Analytics.track(
+                        "File Upload", properties: [
+                            "state": "success",
+                            "filetype": fileurl.pathExtension.lowercased()
+                        ]
+                    )
+                }
             }
             
             try? FileManager.default.removeItem(

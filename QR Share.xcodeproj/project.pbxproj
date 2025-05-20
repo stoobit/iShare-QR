@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB3D03EF2CA43489004E1D5C /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = BB3D03EE2CA43489004E1D5C /* Mixpanel */; };
+		BB5044B82DDCE9A9003DCF9D /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = BB5044B72DDCE9A9003DCF9D /* Analytics */; };
 		BB57847A2C91E722007EADDA /* Share.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BB5784702C91E722007EADDA /* Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3D03EF2CA43489004E1D5C /* Mixpanel in Frameworks */,
+				BB5044B82DDCE9A9003DCF9D /* Analytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +159,7 @@
 			);
 			name = Share;
 			packageProductDependencies = (
-				BB3D03EE2CA43489004E1D5C /* Mixpanel */,
+				BB5044B72DDCE9A9003DCF9D /* Analytics */,
 			);
 			productName = Share;
 			productReference = BB5784702C91E722007EADDA /* Share.appex */;
@@ -193,7 +193,7 @@
 			mainGroup = BB5784522C91E5A5007EADDA;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				BB3D03ED2CA43489004E1D5C /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
+				BB5044B62DDCE9A9003DCF9D /* XCRemoteSwiftPackageReference "stoobit-analytics-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BB57845C2C91E5A5007EADDA /* Products */;
@@ -519,21 +519,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BB3D03ED2CA43489004E1D5C /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+		BB5044B62DDCE9A9003DCF9D /* XCRemoteSwiftPackageReference "stoobit-analytics-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			repositoryURL = "https://github.com/stoobit-analytics/stoobit-analytics-swift";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BB3D03EE2CA43489004E1D5C /* Mixpanel */ = {
+		BB5044B72DDCE9A9003DCF9D /* Analytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BB3D03ED2CA43489004E1D5C /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
-			productName = Mixpanel;
+			package = BB5044B62DDCE9A9003DCF9D /* XCRemoteSwiftPackageReference "stoobit-analytics-swift" */;
+			productName = Analytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
