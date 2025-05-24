@@ -123,13 +123,12 @@ struct ShareView: View {
             if type == .url {
                 Task { @MainActor in
                     Analytics
-                        .track("API Connection", properties: ["state": "none"])
-                    
-                    Analytics
                         .track("File Upload", properties: [
                             "state": "success",
                             "filetype": "url"
                         ])
+                    
+                    Analytics.flush()
                 }
                 
                 item.loadItem(forTypeIdentifier: type.identifier) { url, _ in

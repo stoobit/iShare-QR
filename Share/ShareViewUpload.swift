@@ -47,6 +47,8 @@ extension ShareView {
                             "filetype": fileurl.pathExtension.lowercased()
                         ]
                     )
+                    
+                    Analytics.flush()
                 }
                 
                 result = temporary
@@ -59,6 +61,8 @@ extension ShareView {
                             "filetype": fileurl.pathExtension.lowercased()
                         ]
                     )
+                    
+                    Analytics.flush()
                 }
             }
             

@@ -51,12 +51,5 @@ class ShareViewController: UIViewController {
                 )
             ])
         }
-        
-        Analytics.track("Session Start")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        Analytics.track("Session End")
-        Analytics.flush()
     }
 }
