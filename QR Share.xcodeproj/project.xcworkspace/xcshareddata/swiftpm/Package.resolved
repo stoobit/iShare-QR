@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stoobit-analytics/stoobit-analytics-swift",
       "state" : {
-        "revision" : "63a52d2813ab50afbd6822d4a0189a70a347610d",
-        "version" : "1.0.1"
+        "revision" : "2b9831fe1eeeaebb825f115d833767364782f9db",
+        "version" : "2.0.1"
       }
     }
   ],

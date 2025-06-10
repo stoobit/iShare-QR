@@ -8,15 +8,9 @@
 import UIKit
 import Social
 import SwiftUI
-import Analytics
 
 class ShareViewController: UIViewController {
     override func viewDidLoad() {
-        Analytics.initialize(
-            with: "1fafa0f31d10d9725fac48d5f1dbae2e",
-            interval: 60*10
-        )
-        
         super.viewDidLoad()
         self.isModalInPresentation = true
         
