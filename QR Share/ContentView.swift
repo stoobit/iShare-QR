@@ -18,7 +18,7 @@ struct ContentView: View {
 
                 ContentUnavailableView(
                     "Step 2", systemImage: "qrcode",
-                    description: Text("Create a QR-Code with iShare QR.")
+                    description: Text("Create a QR-Code with stoobit share.")
                 )
 
                 ContentUnavailableView(
@@ -34,7 +34,7 @@ struct ContentView: View {
 
             }
             .foregroundStyle(Color.primary, Color.blue)
-            .navigationTitle("iShare QR")
+            .navigationTitle("stoobit share")
         }
     }
 }

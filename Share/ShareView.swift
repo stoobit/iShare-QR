@@ -47,8 +47,15 @@ struct ShareView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle("stoobit share")
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done", action: dismiss)
+                if #available(iOS 26, *) {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done", action: dismiss)
+                    }
+                } else {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done", action: dismiss)
+                            .foregroundStyle(Color.primary)
+                    }
                 }
             }
         }
