@@ -11,7 +11,12 @@ import SwiftUI
 struct QR_ShareApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if let data = UserDefaults(suiteName: "group.stoobitshare.com") {
+                ContentView()
+                    .defaultAppStorage(data)
+            } else {
+                ContentView()
+            }
         }
     }
 }

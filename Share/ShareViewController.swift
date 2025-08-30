@@ -19,16 +19,20 @@ class ShareViewController: UIViewController {
         )?.attachments {
             let hostingView: UIViewController
             
+            guard let data = UserDefaults(suiteName: "group.stoobitshare.com") else {
+                return 
+            }
+            
             if itemProviders.count == 1 && itemProviders[0].registeredContentTypes.first == .url {
                 hostingView = UIHostingController(rootView: OptionCloudView(
                     itemProviders: itemProviders,
                     extensionContext: extensionContext
-                ))
+                ).defaultAppStorage(data))
             } else {
                 hostingView = UIHostingController(rootView: ShareViewContainer(
                     itemProviders: itemProviders,
                     extensionContext: extensionContext
-                ))
+                ).defaultAppStorage(data))
             }
             
             addChild(hostingView)

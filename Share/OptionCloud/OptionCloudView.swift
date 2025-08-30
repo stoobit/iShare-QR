@@ -47,6 +47,7 @@ struct OptionCloudView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle("stoobit share")
+            .navigationBarBackButtonHidden()
             .toolbar {
                 ToolbarView {
                     dismiss()

@@ -10,6 +10,8 @@ import Social
 import Analytics
 
 struct ShareViewContainer: View {
+    @AppStorage("Premium") var isPremium: Bool = false
+    
     @Environment(\.openURL) var openURL
     @State var model = ShareViewModel()
     
@@ -49,56 +51,43 @@ struct ShareViewContainer: View {
                     Text("Select an option to share your files via a QR code.")
                 }
                 
-                HStack(alignment: .top, spacing: 14) {
-                    Image(systemName: "crown.fill")
-                        .foregroundStyle(Color.accentColor)
-                        .frame(maxHeight: .infinity)
-                        .font(.title)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Premium")
-                            .font(.headline)
-                        
-                        Text("Share multiple files at once.")
-                            .foregroundStyle(Color.secondary)
-                            .font(.footnote)
-                    }
-                    
-                    Spacer(minLength: 0)
-                    
-                    Button(action: openApp) {
-                        Text("View")
-                            .font(.headline)
-                            .padding(.vertical, 7)
-                            .padding(.horizontal, 13)
-                            .background(.ultraThickMaterial)
+                if isPremium == false {
+                    HStack(alignment: .top, spacing: 14) {
+                        Image(systemName: "crown.fill")
                             .foregroundStyle(Color.accentColor)
-                            .clipShape(.capsule)
+                            .frame(maxHeight: .infinity)
+                            .font(.title)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Premium")
+                                .font(.headline)
+                            
+                            Text("Share multiple files at once.")
+                                .foregroundStyle(Color.secondary)
+                                .font(.footnote)
+                        }
+                        
+                        Spacer(minLength: 0)
+                        
+                        Button(action: openApp) {
+                            Text("View")
+                                .font(.headline)
+                                .padding(.vertical, 7)
+                                .padding(.horizontal, 13)
+                                .background(.ultraThickMaterial)
+                                .foregroundStyle(Color.accentColor)
+                                .clipShape(.capsule)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxHeight: .infinity)
                     }
-                    .buttonStyle(.plain)
-                    .frame(maxHeight: .infinity)
+                    .padding(5)
                 }
-                .padding(5)
             }
             .navigationTitle("stoobit share")
-            .overlay(alignment: .bottom) {
-                Text("Thank you for using stoobit share.")
-                    .foregroundStyle(Color.secondary)
-                    .font(.footnote)
-            }
             .toolbar {
-                if #available(iOS 26, *) {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel", systemImage: "xmark") {
-                            dismiss()
-                        }
-                    }
-                } else {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") {
-                            dismiss()
-                        }
-                    }
+                ToolbarView {
+                    dismiss()
                 }
             }
         }
@@ -129,6 +118,6 @@ struct ShareViewContainer: View {
     }
     
     func openApp() {
-        openURL(URL(string: "stoobitshare")!)
+        openURL(URL(string: "stoobitshare:view")!)
     }
 }

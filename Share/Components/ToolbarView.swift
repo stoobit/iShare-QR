@@ -12,13 +12,16 @@ struct ToolbarView: ToolbarContent {
     
     var body: some ToolbarContent {
         if #available(iOS 26, *) {
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Close", action: dismiss)
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Close", systemImage: "xmark") {
+                    dismiss()
+                }
             }
         } else {
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Close", action: dismiss)
-                    .foregroundStyle(Color.primary)
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Close") {
+                    dismiss()
+                }
             }
         }
     }

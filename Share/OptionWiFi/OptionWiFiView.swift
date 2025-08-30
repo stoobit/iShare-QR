@@ -14,17 +14,27 @@ struct OptionWiFiView: View {
     var extensionContext: NSExtensionContext?
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onAppear {
-                Task.detached(priority: .background) {
-                    await app.start()
+        NavigationStack {
+            VStack {
+                
+            }
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarView {
+                    dismiss()
                 }
             }
-            .onDisappear {
-                Task.detached(priority: .background) {
-                    await app.stop()
-                }
+        }
+        .onAppear {
+            Task.detached(priority: .background) {
+                await app.start()
             }
+        }
+        .onDisappear {
+            Task.detached(priority: .background) {
+                await app.stop()
+            }
+        }
     }
     
     func dismiss() {
