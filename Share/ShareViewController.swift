@@ -17,11 +17,19 @@ class ShareViewController: UIViewController {
         if let itemProviders = (
             extensionContext!.inputItems.first as? NSExtensionItem
         )?.attachments {
+            let hostingView: UIViewController
             
-            let hostingView = UIHostingController(rootView: ShareView(
-                itemProviders: itemProviders,
-                extensionContext: extensionContext
-            ))
+            if itemProviders.count == 1 && itemProviders[0].registeredContentTypes.first == .url {
+                hostingView = UIHostingController(rootView: OptionCloudView(
+                    itemProviders: itemProviders,
+                    extensionContext: extensionContext
+                ))
+            } else {
+                hostingView = UIHostingController(rootView: ShareViewContainer(
+                    itemProviders: itemProviders,
+                    extensionContext: extensionContext
+                ))
+            }
             
             addChild(hostingView)
             hostingView.view

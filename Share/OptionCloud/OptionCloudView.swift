@@ -9,8 +9,9 @@ import SwiftUI
 import UniformTypeIdentifiers
 import Social
 import Analytics
+import StoreKit
 
-struct ShareView: View {
+struct OptionCloudView: View {
     @State var model = ShareViewModel()
     
     var itemProviders: [NSItemProvider]
@@ -47,15 +48,8 @@ struct ShareView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle("stoobit share")
             .toolbar {
-                if #available(iOS 26, *) {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Done", action: dismiss)
-                    }
-                } else {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Done", action: dismiss)
-                            .foregroundStyle(Color.primary)
-                    }
+                ToolbarView {
+                    dismiss()
                 }
             }
         }
